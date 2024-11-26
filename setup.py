@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'passurls = passurls:main', 
+            'passurls = passurls.passurls:main', 
         ],
     },
     python_requires='>=3.6',
