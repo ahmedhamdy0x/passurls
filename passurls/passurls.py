@@ -19,7 +19,11 @@ def print_logo():
 
 def make_request(url, proxy):
     try:
-        response = requests.get(url, proxies={"http": proxy, "https": proxy}, verify=False)
+        proxies = {
+            "http": proxy,
+            "https": proxy  # تأكد من أن البروكسي يدعم HTTPS
+        }
+        response = requests.get(url, proxies=proxies, verify=False)
         if response.status_code == 200:
             print(Fore.GREEN + f"Success: {url} - Status Code: {response.status_code}")
         else:
